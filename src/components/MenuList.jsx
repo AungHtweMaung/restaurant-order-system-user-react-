@@ -21,15 +21,15 @@ export default function MenuList() {
                                 style={{ height: "150px", objectFit: "cover" }}
                             />
                             <div className="card-body d-flex flex-column" >
-                                <h5 className="card-title">{item.mm_name}</h5>
-                                <p className="card-text">{item.price} Ks</p>
+                                <h5 className="card-title text-center">{item.mm_name}</h5>
+                                <p className="card-text text-center">{item.price} Ks</p>
                                 {/* <p>{item.eng_description}</p> */}
-                                <button
+                                {/* <button
                                     className="btn btn-danger mt-auto"
                                     onClick={() => addToCart(item)}
                                 >
                                     Add to Cart
-                                </button>
+                                </button> */}
                                 
                             </div>
                         </div>
