@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
 import { STORAGE_URL } from '../services/config';
 import { api } from '../services/api';
 
@@ -32,7 +33,8 @@ export default function MenuList({ selectedCategory }) {
 
                 {filteredMenuItems && filteredMenuItems.map(item => (
                     <div key={item.id} className="col-6 col-md-4 col-lg-3">
-                        <div className="card h-100 p-md-3">
+                        <Link to={`/menu/${item.id}`} className="text-decoration-none">
+                            <div className="card h-100 p-md-3">
                             <img
                                 src={`${STORAGE_URL}/${item.image_path}`}
 
@@ -53,6 +55,7 @@ export default function MenuList({ selectedCategory }) {
                                 
                             </div>
                         </div>
+                        </Link>
                     </div>
                 ))}
             </div>

@@ -35,6 +35,9 @@ async function apiRequest(endpoint, options = {}) {
   }
   
   if (!response.ok) {
+    if (response.status === 404) {
+      throw new Error("404");
+    }
     const error = await response.json().catch(() => ({}));
     throw new Error(error.message || `Request failed: ${response.status}`);
   }
