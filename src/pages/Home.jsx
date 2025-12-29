@@ -1,20 +1,18 @@
-import React, { useState } from 'react'
 
-import CategoryList from '../components/CategoryList.jsx';
-import MenuList from '../components/MenuList.jsx';
-import Navbar from '../components/Navbar.jsx';
-
+import React, { useState, useEffect } from 'react'
+import CategoryList from '../components/CategoryList';
+import MenuList from '../components/MenuList';
 
 export default function Home() {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+
+
+
   return (
-    <div className='container '>
-      <div className="row">
-        <div className="col-md-10 offset-md-1">
-          <Navbar />
-          <CategoryList />
-          <MenuList />
-        </div>
-      </div>
-    </div>
+    <>
+        <CategoryList onCategorySelect={setSelectedCategory} />
+        <MenuList selectedCategory={selectedCategory} />
+    </>
   )
 }
